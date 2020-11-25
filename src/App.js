@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
-import { Header, Formulario } from './components';
+import { 
+	Header,
+	Formulario,
+	Spinner 
+} from './components';
 import styled from '@emotion/styled';
 
 const Contenedor = styled.div`
@@ -36,6 +40,9 @@ function App() {
 					guardarCargando={ guardarCargando }
 					guardarResumen={ guardarResumen }
 				/>
+
+				{ cargando ? <Spinner /> : null }
+
 			</ContenedorFormulario>
 		</Contenedor>
   	);
