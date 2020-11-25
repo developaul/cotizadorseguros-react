@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { 
 	Header,
 	Formulario,
-	Spinner 
+	Spinner,
+	Resumen,
+	Resultado
 } from './components';
 import styled from '@emotion/styled';
 
@@ -26,8 +28,8 @@ function App() {
 		}
 	});
 
-	const [ cargando, guardarCargando ] = useState( false );
-	const { cotizacion, datos } 		= resumen;
+	const [ cargando, guardarCargando ] = useState( false ),
+		  { cotizacion, datos } 		= resumen;
 
 	return (
 		<Contenedor>
@@ -43,6 +45,19 @@ function App() {
 
 				{ cargando ? <Spinner /> : null }
 
+				{ !cargando ?
+						<>
+							<Resumen
+								datos={ datos }
+							/>
+
+							<Resultado
+								cotizacion={ cotizacion }
+							/>
+						</>
+					:
+						null
+				}
 			</ContenedorFormulario>
 		</Contenedor>
   	);

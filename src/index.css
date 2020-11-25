@@ -41,3 +41,7 @@ span.resultado {
   opacity: 0;
   transform: translateY(-10%);
 }
+
+.input:first-of-type {
+  margin: 0 1rem 0 0;
+}

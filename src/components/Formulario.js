@@ -107,7 +107,7 @@ const Formulario = ({ guardarCargando, guardarResumen }) => {
             // Guardando Resumen de la cotización
             guardarResumen({
                 cotizacion: Number( resultado ),
-                ...datos
+                datos
             });
         }, 3000);
     };
@@ -159,6 +159,7 @@ const Formulario = ({ guardarCargando, guardarResumen }) => {
                 <Label>Plan:</Label>
 
                 <InputRadio
+                    className="input"
                     type="radio"
                     name="plan"
                     value="basico"
@@ -167,6 +168,7 @@ const Formulario = ({ guardarCargando, guardarResumen }) => {
                 /> Básico
 
                 <InputRadio
+                    className="input"
                     type="radio"
                     name="plan"
                     value="completo"
